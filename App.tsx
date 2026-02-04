@@ -9,8 +9,6 @@ import {
   Users, 
   Menu, 
   X,
-  ChevronRight,
-  Plus,
   Briefcase
 } from 'lucide-react';
 import { AppState } from './types';
@@ -60,7 +58,6 @@ const App: React.FC = () => {
         fixed inset-y-0 left-0 z-40 w-64 bg-slate-900 transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0
       `}>
         <div className="flex flex-col h-full">
-          {/* Logo Section */}
           <div className="p-6 flex flex-col items-center">
             <div className="w-full text-center mb-6">
                <h1 className="text-orange-500 font-bold text-3xl tracking-tighter">SITEC</h1>
@@ -69,7 +66,6 @@ const App: React.FC = () => {
             <div className="h-px w-full bg-slate-800" />
           </div>
 
-          {/* Navigation */}
           <nav className="flex-1 px-4 space-y-1">
             {navItems.map((item) => (
               <button
@@ -91,7 +87,6 @@ const App: React.FC = () => {
             ))}
           </nav>
 
-          {/* User Info */}
           <div className="p-4 bg-slate-800 m-4 rounded-xl">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
@@ -106,19 +101,12 @@ const App: React.FC = () => {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
         <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8 hidden lg:flex">
           <h2 className="text-lg font-semibold text-gray-800 capitalize">
             {navItems.find(i => i.id === activeTab)?.label}
           </h2>
-          <div className="flex items-center space-x-4">
-            <button className="p-2 text-gray-400 hover:text-orange-500">
-              <Bell size={20} />
-            </button>
-            <div className="h-8 w-px bg-gray-200" />
-            <span className="text-sm font-medium text-gray-600">Hoy: {new Date().toLocaleDateString('es-CO')}</span>
-          </div>
+          <span className="text-sm font-medium text-gray-600">Hoy: {new Date().toLocaleDateString('es-CO')}</span>
         </header>
 
         <div className="flex-1 overflow-y-auto p-4 lg:p-8">

@@ -59,13 +59,12 @@ export interface ExecutionReport {
   id: string;
   visitId: string;
   clientId: string;
-  quoteId?: string; // For traceability
   date: string;
   activities: string;
   equipmentIntervened: string;
   observations: string;
   warrantyMonths: number;
-  clientSignature?: string; // Base64
+  clientSignature?: string; 
 }
 
 export interface MaintenanceAlert {
