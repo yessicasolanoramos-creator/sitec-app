@@ -7,6 +7,8 @@ export enum VisitStatus {
   CANCELLED = 'Cancelada'
 }
 
+export type ServiceType = 'Venta' | 'Mantenimiento' | 'Instalación';
+
 export interface Client {
   id: string;
   name: string;
@@ -36,8 +38,12 @@ export interface Quote {
   id: string;
   clientId: string;
   date: string;
+  serviceTypes: ServiceType[];
   items: QuoteItem[];
   laborCost: number;
+  subtotalItems: number;
+  subtotalGeneral: number;
+  iva: number;
   total: number;
   status: 'Draft' | 'Sent' | 'Approved' | 'Rejected';
   observations?: string;
