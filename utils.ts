@@ -5,6 +5,14 @@ const STORAGE_KEY = 'sitec_app_data';
 
 export const DEFAULT_QUOTE_OBSERVATIONS = `- Cliente suministra todos los accesos requeridos de altura, escaleras, manlift, andamios, etc.\n- No incluye recargo de trabajo nocturno, ni presencia de personal siso, de ser necesario o requerido, el costo será asumido por el cliente.\n- Tiempo de trabajo estimado: Según cronograma.\n- No incluye canaletas, tuberías y puntos de corriente.`;
 
+export const DEFAULT_COMMERCIAL_CONDITIONS = `Moneda: Pesos Colombianos (COP)
+Forma de pago: 50% Anticipo - 50% Entrega
+Vigencia: 15 días calendario
+Garantía: Un (1) año por defectos de fábrica
+Entrega: Según disponibilidad técnica
+Obras Civiles: No incluidas
+Infraestructura: Suministrada por el cliente`;
+
 export const SITEC_BANK_INFO = "BANCOLOMBIA N° CUENTA AHORRO: 67800017190 - SITEC SOLUCIONES TECNOLOGICAS INTEGRALES SAS NIT 901806525-3";
 
 export const initialData: AppState = {
@@ -198,15 +206,7 @@ export const generateQuotePDF = (quote: Quote, client: Client | undefined) => {
           </div>
           <div class="conditions-box">
             <strong>CONDICIONES COMERCIALES</strong>
-            <table style="width: 100%; margin-top: 5px; font-size: 10px; border-spacing: 0 4px;">
-              <tr><td style="color: #6b7280;">Moneda:</td><td style="text-align: right; font-weight: bold;">Pesos Colombianos (COP)</td></tr>
-              <tr><td style="color: #6b7280;">Forma de pago:</td><td style="text-align: right; font-weight: bold;">50% Anticipo - 50% Entrega</td></tr>
-              <tr><td style="color: #6b7280;">Vigencia:</td><td style="text-align: right; font-weight: bold;">15 días calendario</td></tr>
-              <tr><td style="color: #6b7280;">Garantía:</td><td style="text-align: right; font-weight: bold;">Un (1) año por defectos de fábrica</td></tr>
-              <tr><td style="color: #6b7280;">Entrega:</td><td style="text-align: right; font-weight: bold;">Según disponibilidad técnica</td></tr>
-              <tr><td style="color: #6b7280;">Obras Civiles:</td><td style="text-align: right; font-weight: bold;">No incluidas</td></tr>
-              <tr><td style="color: #6b7280;">Infraestructura:</td><td style="text-align: right; font-weight: bold;">Suministrada por el cliente</td></tr>
-            </table>
+            <pre style="white-space: pre-wrap; margin-top: 5px; font-family: inherit; font-size: 10px; color: #4b5563;">${DEFAULT_COMMERCIAL_CONDITIONS}</pre>
           </div>
         </div>
 
