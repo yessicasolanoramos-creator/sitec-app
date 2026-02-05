@@ -65,6 +65,7 @@ export interface ExecutionReport {
   id: string;
   visitId: string;
   clientId: string;
+  quoteId?: string; // Vinculación con cotización
   date: string;
   activities: string;
   equipmentIntervened: string;
